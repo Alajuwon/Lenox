@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+	
+body{
+	height: 100%;
+	background-color: #DCDCDC;	
+	color: black;
+}
+
+.mainfront-pics {
+    width: 100px;
+    height: 100px;
+}
+
+.restaurant_item-pic{
+    height: 200;    
+    width: 200;
+}
+
+
+
+	h1{
+	text-align: center;
+	font-family: fantasy;
+	font-size: 50px;
+	color: teal;
+	padding: 15px;
+}
+
+
+#main-nav{
+	margin-bottom: 0px;
+	border-radius: 0px;
+	height: 50px;
+	
+}
+
+.lrbg-pic{
+    height: 345px;
+    width: 100%;
+    background-image: url(lrbg.jpg);
+    background-position-y: -255px;
+    background-position-x: -243px;
+}
+
+.logo-outline{
+    position: absolute;
+    right: 105px;
+    top: 55px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border-color: teal;
+    background-color: teal;
+    margin-top: 11px;
+}
+
+
+.logo-inner{
+    height: 291px;
+    width: 291px;
+    border-radius: 50%;
+    background-color: teal;
+    margin-left: 4px;
+    border: solid 6px #3f3f3f;
+    position: absolute;
+    bottom: 5px;
+}
+
+
+.logo-name{
+	  position: absolute;
+    bottom: 78px;
+    right: 57px;
+    font-size: 28px;
+    font-family: monospace;
+    font-weight: lighter;
+    color: black;
+}
+
+.wire-frame{
+
+	width: 100%;
+	border: solid 5px teal;
+}
+

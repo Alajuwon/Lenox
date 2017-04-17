@@ -1,0 +1,59 @@
+<h1><%= @menu.name %></h1>
+
+<div class="container">
+<div class="row">
+	<% @restaurant_items.each do |restaurant_item| %>
+		<div class="col-md-4">
+			<div class="center-it">
+				<% #if restaurant_item.image.url.nil? == false %>
+				<p><%#= image_tag restaurant_item.image.url class: "mainfront-pics"%></p>
+				<%# end %>
+				<h3><%= link_to restaurant_item.name, restaurant_item %></h3>
+				<p><%= number_to_currency restaurant_item.price %></p>
+				<p>
+					<a href='#' data-toggle="modal" data-target="#myModal_<%= restaurant_item.id %>">
+						<span class="fa fa-cutlery" aria-hidden="true"></span> Quick Info</a>
+					</a>
+				</p>
+			</div>
+		</div>
+
+
+<!-- Modal -->
+
+	<div class="modal fade" id="myModal_<%= restaurant_item.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	   	<div class="modal-content">
+	      <div class="modal-header">
+	       	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Lenox road Bar & Grill</h4>
+	      </div>
+
+	  			<div class="modal-body">
+	      		<% if restaurant_item.image.url.nil? == false %>
+								<p><%= image_tag restaurant_item.image.url, class: "mainfront-pics" %></p>
+								<% end %>
+								<h3><%= link_to restaurant_item.name, restaurant_item %></h3>
+								<p><%= restaurant_item.description %></p>
+								<p><%= number_to_currency restaurant_item.price %></p>
+								<p><strong>Calories</strong> <%=restaurant_item.calories %></p>  
+	      	</div>
+
+				    	<div class="modal-footer">
+				      	<p>
+									<%= form_tag add_to_order_path do %>
+				      			<%= hidden_field_tag :restaurant_item_id, restaurant_item.id %>
+				      			<%= number_field_tag :quantity,nil, placeholder: "How Many?" %>
+				      			<%= submit_tag "Add to Order", class: "btn btn-primary" %>
+				      		<% end %>
+
+				      	</p>
+				      </div>
+			</div>
+		</div>
+	</div>
+
+	<% end %>
+
+
+</div>			

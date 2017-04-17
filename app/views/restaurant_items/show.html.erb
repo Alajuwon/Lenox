@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant_item.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @restaurant_item.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @restaurant_item.quantity %>
+</p>
+
+<p>
+  <%= image_tag @restaurant_item.image.url, class: "restaurant_item-pic" %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant_item.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @restaurant_item.rating %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @restaurant_item.menu_id %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @restaurant_item.calories %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_item_path(@restaurant_item) %> |
+<%= link_to 'Back', restaurant_items_path %>
+</div>

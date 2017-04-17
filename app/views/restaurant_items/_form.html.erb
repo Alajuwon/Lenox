@@ -1,0 +1,51 @@
+<%= form_for(restaurant_item) do |f| %>
+  <% if restaurant_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(restaurant_item.errors.count, "error") %> prohibited this restaurant_item from being saved:</h2>
+
+      <ul>
+      <% restaurant_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Restaurant Item Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :price, placeholder: "Price (no $ sign)", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.number_field :quantity , placeholder: "How Much or How Many in Stock", class: "form-control" %>
+  </div>
+  
+<div class="form-group">
+    <%= f.text_area :description, placeholder: "Meal Description",  class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.number_field :rating, placeholder: "Suggested Meal Rating", class: "form-control" %>
+  </div>
+
+ <div class="form-group">
+    <%= f.select :menu_id, @menus.collect { |m| [ m.name, m.id ]}, {include_blank: "Choose Menu Item" } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.number_field :calories, placeholder: "Food Calories", class: "form-control" %>
+  </div>
+
+  <div class="form-group"> <strong>Upload Product Image</strong>
+    <%= f.file_field :image %>
+    </div>
+
+    <div class="form-group">
+    <%= f.submit "Create Product", class: "btn btn-success" %>
+  </div>
+  
+<% end %>
+

@@ -1,0 +1,2 @@
+module LenoxHelper
+end

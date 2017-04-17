@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Restaurant Items</h1>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Category</th>
+      <th>Calories</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurant_items.each do |restaurant_item| %>
+      <tr>
+        <td><%= restaurant_item.name %></td>
+        <td><%= number_to_currency restaurant_item.price %></td>
+        <td><%= restaurant_item.quantity %></td>
+        <td><%= restaurant_item.description %></td>
+        <td><%= restaurant_item.rating %></td>
+        <td><%= restaurant_item.menu_id %></td>
+        <td><%= restaurant_item.calories %></td>
+        <td><%= link_to 'Show', restaurant_item %></td>
+        <td><%= link_to 'Edit', edit_restaurant_item_path(restaurant_item) %></td>
+        <td><%= link_to 'Destroy', restaurant_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurant Item', new_restaurant_item_path  %>  |  <%= link_to 'All Restaurant Items', all_restaurant_items_path %>
+</div>
